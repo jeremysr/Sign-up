@@ -16,7 +16,7 @@ class Ticket: #class is an object that holds infomation
 
 
 #test data
-Ticket = [
+tickets = [
     Ticket("Jeremy","hmjzone@gmail.com","20.02.2002",False),
     Ticket("Jerry","jerry@gmail.com","14.06.2003",False),
     Ticket("Moses","moses@gmail.com","01.04.2001",False),
@@ -31,5 +31,13 @@ Ticket = [
 @view('index')
 def index():
     pass
+
+#pages
+#index page
+@route('/check-in')
+@view('check-in')
+def check_in():
+    data = dict (ticket_list = tickets)
+    return data
 
 run(host='0.0.0.0', port = 8080, reloader = True, debug = True)
