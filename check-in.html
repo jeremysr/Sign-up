@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	% include('shared/Head.html')
+	% include('shared/Navbar.html')
+	
+	<!--
+	
+	<div class="row">
+		<div class="col s12 center">check in test</div>
+		% for ticket in ticket_list:
+		<div class="col s6 center">{{ticket.name}}</div>
+		<div class="col s6 center">
+			<p>{{ticket.email}}</p>
+			<p>{{ticket.dob}}</p>
+		</div>
+		%end
+	</div>
+	
+	-->
+	
+	<div class="row">
+	% for ticket in ticket_list:
+		<div class="col s12 m7">
+			<div class="card" style="width:50%;">
+				<div class="card-image">
+					<img src="https://i.imgur.com/s0AAoQB.png" style="width:100%;">
+					<span class="card-title">{{ticket.name}}</span>
+				</div>
+				<div class="card-content">
+					<p>{{ticket.dob}}</p>
+				</div>
+				<div class="card-action">
+					<a href="#">{{ticket.email}}</a>
+				</div>
+			</div>
+		</div>
+	%end
+	</div>
+
+
+
+</html>
