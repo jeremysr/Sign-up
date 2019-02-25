@@ -17,10 +17,10 @@ class Ticket: #class is an object that holds infomation
 
 #test data
 tickets = [
-    Ticket("Jeremy","hmjzone@gmail.com","20.02.2002",False),
-    Ticket("Jerry","jerry@gmail.com","14.06.2003",False),
-    Ticket("Moses","moses@gmail.com","01.04.2001",False),
-    Ticket("Dom","dom@gmail.com","15.03.2002",False)
+    Ticket("Jeremy","hmjzone@gmail.com","20/02/2002",False),
+    Ticket("Tom","tom@gmail.com","14/06/2003",False),
+    Ticket("Moses","moses@gmail.com","01/04/2001",False),
+    Ticket("Dom","dom@gmail.com","15/03/2002",False)
 ]
 
 
@@ -38,6 +38,23 @@ def index():
 @view('check-in')
 def check_in():
     data = dict (ticket_list = tickets)
+    return data
+
+
+''' 
+this changes a ticket status to "check in" and
+displays the result to the user
+'''
+@route('/check-in-success/<ticket_id>')
+@view ('check-in-success')
+def check_in_success(ticket_id):
+    ticket_id = int(ticket_id)
+    found_ticket = None
+    for ticket in tickets:
+        if ticket.id == ticket_id:
+            found_ticket = ticket
+    data = dict (ticket = found_ticket)
+    found_ticket.check_in = True
     return data
 
 run(host='0.0.0.0', port = 8080, reloader = True, debug = True)

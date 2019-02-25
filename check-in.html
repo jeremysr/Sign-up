@@ -20,7 +20,7 @@
 	
 	<div class="row">
 	% for ticket in ticket_list:
-		<div class="col s12 m7">
+		<div class="col s6 m7">
 			<div class="card" style="width:50%;">
 				<div class="card-image">
 					<img src="https://i.imgur.com/s0AAoQB.png" style="width:100%;">
@@ -28,6 +28,12 @@
 				</div>
 				<div class="card-content">
 					<p>{{ticket.dob}}</p>
+					<p>{{ticket.check_in}}</p>
+					%if ticket.check_in == True:
+						<p> Checked in </p>
+					%else:
+						<p> <a href = "/check-in-success/{{ticket.id}}"> Not checked in </a></p>
+					%end
 				</div>
 				<div class="card-action">
 					<a href="#">{{ticket.email}}</a>
