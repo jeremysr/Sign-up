@@ -33,12 +33,26 @@ def index():
     pass
 
 #pages
-#index page
+#check-in page
 @route('/check-in')
 @view('check-in')
 def check_in():
     data = dict (ticket_list = tickets)
     return data
+
+#pages
+#sell ticket page
+@route('/sell-ticket')
+@view('sell-ticket')
+def sell_ticket():
+    pass
+
+'''
+@route('/')
+@view('')
+def sell_ticket_success():
+    pass
+'''    
 
 
 ''' 
