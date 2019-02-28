@@ -47,15 +47,21 @@ def check_in():
 def sell_ticket():
     pass
 
-'''
-@route('/')
-@view('')
+
+@route('/sell-ticket-success', method ="POST")
+@view('sell-ticket-success')
 def sell_ticket_success():
-    pass
-'''    
+    name = request.forms.get('name')
+    email = request.forms.get('email')
+    date_of_birth = request.forms.get('dob')
+    
+    new_ticket = Ticket(name, email, date_of_birth, False)
+    tickets.append(new_ticket)
+    
 
 
-''' 
+
+'''
 this changes a ticket status to "check in" and
 displays the result to the user
 '''

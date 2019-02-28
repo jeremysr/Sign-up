@@ -7,30 +7,22 @@
 	<div class="row">
 		<form class="col s12" action = "/sell-ticket-success" method = "post">
 			<div class="row">
-				<div class="input-field col s6">
+				<div class="input-field col s3">
 					<input placeholder="Placeholder" id="inp_name" name="name" type="text" class="validate">
 					<label for="inp_name">Name</label>
 				</div>
-				<div class="input-field col s6">
+				<div class="input-field col s3">
 					<input placeholder = "dd/mm/yyyy" id="inp_dob" name = "dob" type= "text" class= "validate">
 					<label for="inp_dob">Date Of Birth</label>
 				</div>
 			</div>
 			<div class="row">
-				<div class="input-field col s12">
+				<div class="input-field col s3">
 					<input id="inp_email" type="email" name = "email" placeholder = "example@gmail.com" class="validate">
 					<label for="inp_email">Email</label>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col s12">
-					<div class="input-field inline">
-						<input id="email_inline" type="email" class="validate">
-						<label for="email_inline">Email</label>
-						<span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-					</div>
-				</div>
-			</div>
+			<button class="btn waves-effect waves-light" type ="submit" name="action">Submit</button>
 		</form>
 	</div>
 	
